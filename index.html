@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nova Accessories | متجر إكسسوارات الهواتف</title>
+  <title>ورشة عمل مادة الحاسوب</title>
   <style>
     *{
       box-sizing:border-box;
@@ -14,23 +14,23 @@
     }
 
     body{
-      background:linear-gradient(180deg,#0b1020,#111935 45%,#0d1429 100%);
-      color:#fff;
+      background:linear-gradient(180deg,#f4f8ff,#eef4ff,#f9fbff);
+      color:#1d2a44;
     }
 
     header{
+      background:linear-gradient(135deg,#153c8a,#1e5ac9,#3c7dff);
+      color:white;
+      padding:20px;
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(10,15,30,0.92);
-      border-bottom:1px solid rgba(255,255,255,0.08);
-      backdrop-filter:blur(10px);
+      box-shadow:0 4px 18px rgba(0,0,0,0.12);
     }
 
     .nav{
       max-width:1200px;
       margin:auto;
-      padding:16px 20px;
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -41,7 +41,6 @@
     .logo{
       font-size:28px;
       font-weight:bold;
-      color:#f7c948;
     }
 
     .menu{
@@ -51,7 +50,7 @@
     }
 
     .menu a{
-      color:#fff;
+      color:white;
       text-decoration:none;
       padding:10px 14px;
       border-radius:12px;
@@ -59,57 +58,58 @@
     }
 
     .menu a:hover{
-      background:rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.15);
     }
 
     .hero{
       max-width:1200px;
       margin:auto;
-      padding:50px 20px 25px;
+      padding:45px 20px 20px;
       display:grid;
       grid-template-columns:1.2fr 0.8fr;
       gap:20px;
+      align-items:stretch;
     }
 
     .hero-main{
       background:
-      linear-gradient(rgba(10,15,30,0.72),rgba(16,25,52,0.82)),
-      url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1400&q=80') center/cover;
-      border-radius:24px;
-      padding:45px 30px;
-      min-height:400px;
+        linear-gradient(rgba(17,42,90,0.78),rgba(22,64,145,0.78)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80') center/cover;
+      color:white;
+      border-radius:28px;
+      padding:40px 30px;
+      min-height:420px;
       display:flex;
       flex-direction:column;
       justify-content:center;
-      box-shadow:0 12px 30px rgba(0,0,0,0.35);
+      box-shadow:0 15px 35px rgba(0,0,0,0.16);
     }
 
     .hero-badge{
       display:inline-block;
-      background:rgba(247,201,72,0.15);
-      color:#f7c948;
-      border:1px solid rgba(247,201,72,0.25);
+      width:fit-content;
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.2);
       padding:10px 14px;
       border-radius:999px;
-      font-size:14px;
       margin-bottom:18px;
-      width:fit-content;
+      font-size:14px;
     }
 
     .hero-main h1{
-      font-size:44px;
-      margin-bottom:16px;
+      font-size:46px;
       line-height:1.2;
+      margin-bottom:16px;
     }
 
     .hero-main p{
-      color:#d0d8f0;
+      color:#eef4ff;
       line-height:1.9;
       font-size:17px;
-      max-width:650px;
+      max-width:700px;
     }
 
-    .hero-buttons{
+    .hero-actions{
       margin-top:24px;
       display:flex;
       gap:12px;
@@ -130,25 +130,15 @@
       transform:translateY(-2px);
     }
 
-    .btn-gold{
-      background:#f7c948;
-      color:#111;
-    }
-
-    .btn-green{
-      background:#25D366;
-      color:white;
-    }
-
-    .btn-dark{
-      background:#22305c;
-      color:white;
+    .btn-light{
+      background:white;
+      color:#1f4fc7;
     }
 
     .btn-outline{
       background:transparent;
-      border:1px solid rgba(255,255,255,0.15);
       color:white;
+      border:1px solid rgba(255,255,255,0.35);
     }
 
     .hero-side{
@@ -156,21 +146,22 @@
       gap:16px;
     }
 
-    .card-box{
-      background:rgba(18,26,52,0.92);
-      border:1px solid rgba(255,255,255,0.08);
+    .card{
+      background:white;
       border-radius:24px;
       padding:22px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.25);
+      box-shadow:0 12px 28px rgba(0,0,0,0.08);
+      border:1px solid #e6ecff;
     }
 
-    .card-box h3{
+    .card h3{
       margin-bottom:10px;
+      color:#1e4fb9;
       font-size:24px;
     }
 
-    .card-box p{
-      color:#c6d0ec;
+    .card p{
+      color:#5c6f95;
       line-height:1.8;
     }
 
@@ -181,456 +172,213 @@
     }
 
     .stat{
-      background:rgba(255,255,255,0.04);
+      background:white;
+      border:1px solid #e6ecff;
       border-radius:18px;
       padding:18px;
       text-align:center;
+      box-shadow:0 10px 22px rgba(0,0,0,0.05);
     }
 
     .stat h4{
-      color:#f7c948;
-      font-size:26px;
+      color:#2563eb;
+      font-size:28px;
       margin-bottom:8px;
     }
 
     .stat p{
-      color:#c6d0ec;
+      color:#617596;
       font-size:14px;
-    }
-
-    .tools{
-      max-width:1200px;
-      margin:auto;
-      padding:0 20px 20px;
-      display:grid;
-      grid-template-columns:1fr auto auto;
-      gap:14px;
-      align-items:center;
-    }
-
-    .search-box,.filter-box,.cart-box{
-      background:rgba(18,26,52,0.95);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:18px;
-      box-shadow:0 10px 24px rgba(0,0,0,0.2);
-    }
-
-    .search-box input,
-    .filter-box select{
-      width:100%;
-      background:transparent;
-      border:none;
-      outline:none;
-      color:white;
-      padding:16px;
-      font-size:15px;
-    }
-
-    .filter-box select option{
-      color:#111;
-    }
-
-    .cart-box{
-      padding:16px 18px;
-      min-width:170px;
-      text-align:center;
-      cursor:pointer;
-      font-weight:bold;
     }
 
     .section-title{
       max-width:1200px;
       margin:auto;
       text-align:center;
-      padding:10px 20px 16px;
+      padding:24px 20px 10px;
     }
 
     .section-title h2{
       font-size:34px;
       margin-bottom:10px;
+      color:#173a88;
     }
 
     .section-title p{
-      color:#c6d0ec;
+      color:#5c6f95;
+      max-width:760px;
+      margin:auto;
       line-height:1.8;
-      max-width:700px;
-      margin:auto;
     }
 
-    .categories{
+    .info-grid{
       max-width:1200px;
       margin:auto;
-      padding:10px 20px 10px;
+      padding:20px;
       display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-    }
-
-    .cat{
-      background:rgba(18,26,52,0.92);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:20px;
-      padding:22px;
-      text-align:center;
-      cursor:pointer;
-      transition:0.3s;
-    }
-
-    .cat:hover,.cat.active{
-      transform:translateY(-4px);
-      border-color:rgba(247,201,72,0.35);
-    }
-
-    .cat .icon{
-      font-size:32px;
-      margin-bottom:10px;
-    }
-
-    .cat h3{
-      margin-bottom:8px;
-      font-size:20px;
-    }
-
-    .cat p{
-      color:#c6d0ec;
-      font-size:14px;
-      line-height:1.7;
-    }
-
-    .products{
-      max-width:1200px;
-      margin:auto;
-      padding:24px 20px 10px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-      gap:22px;
-    }
-
-    .product{
-      background:linear-gradient(180deg,#161f41,#101831);
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow:0 12px 30px rgba(0,0,0,0.3);
-      position:relative;
-      transition:0.3s;
-    }
-
-    .product:hover{
-      transform:translateY(-6px);
-    }
-
-    .tag{
-      position:absolute;
-      top:14px;
-      left:14px;
-      background:#ff5c5c;
-      color:white;
-      padding:7px 11px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:bold;
-      z-index:2;
-    }
-
-    .product img{
-      width:100%;
-      height:240px;
-      object-fit:cover;
-      display:block;
-    }
-
-    .product-body{
-      padding:18px;
-      text-align:center;
-    }
-
-    .product-body h3{
-      font-size:22px;
-      margin-bottom:10px;
-    }
-
-    .desc{
-      color:#c6d0ec;
-      font-size:14px;
-      line-height:1.8;
-      min-height:74px;
-    }
-
-    .stars{
-      color:#f7c948;
-      margin:12px 0;
-      font-size:18px;
-    }
-
-    .price{
-      margin-bottom:14px;
-    }
-
-    .old-price{
-      color:#97a6d3;
-      text-decoration:line-through;
-      font-size:14px;
-      margin-left:6px;
-    }
-
-    .new-price{
-      color:#54e39b;
-      font-size:24px;
-      font-weight:bold;
-    }
-
-    .actions{
-      display:grid;
-      gap:10px;
-    }
-
-    .offer{
-      max-width:1200px;
-      margin:25px auto;
-      padding:0 20px;
-    }
-
-    .offer-box{
-      background:linear-gradient(135deg,#162550,#101931);
-      border-radius:24px;
-      padding:28px;
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:16px;
-      align-items:center;
-      box-shadow:0 12px 28px rgba(0,0,0,0.28);
-    }
-
-    .offer-box h3{
-      font-size:30px;
-      color:#f7c948;
-      margin-bottom:10px;
-    }
-
-    .offer-box p{
-      color:#c6d0ec;
-      line-height:1.8;
-      max-width:700px;
-    }
-
-    .features,.testimonials{
-      max-width:1200px;
-      margin:auto;
-      padding:10px 20px 20px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:18px;
     }
 
-    .feature,.testimonial{
-      background:rgba(18,26,52,0.92);
-      border-radius:20px;
-      padding:22px;
-      box-shadow:0 10px 24px rgba(0,0,0,0.2);
+    .info-box{
+      background:white;
+      border:1px solid #e6ecff;
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 12px 24px rgba(0,0,0,0.06);
+      transition:0.3s;
     }
 
-    .feature h4,.testimonial h4{
-      font-size:20px;
+    .info-box:hover{
+      transform:translateY(-4px);
+    }
+
+    .info-box .icon{
+      font-size:34px;
+      margin-bottom:12px;
+    }
+
+    .info-box h3{
+      color:#1e4fb9;
       margin-bottom:10px;
-    }
-
-    .feature p,.testimonial p{
-      color:#c6d0ec;
-      line-height:1.8;
-      font-size:14px;
-    }
-
-    .testimonial .name{
-      margin-top:14px;
-      font-weight:bold;
-    }
-
-    .contact{
-      max-width:1200px;
-      margin:auto;
-      padding:20px;
-    }
-
-    .contact-box2{
-      background:linear-gradient(180deg,#161f41,#101831);
-      border-radius:24px;
-      padding:30px;
-      text-align:center;
-      box-shadow:0 12px 30px rgba(0,0,0,0.25);
-    }
-
-    .contact-box2 h3{
-      font-size:30px;
-      margin-bottom:12px;
-    }
-
-    .contact-box2 p{
-      color:#c6d0ec;
-      line-height:1.9;
-      max-width:700px;
-      margin:auto;
-    }
-
-    .contact-actions{
-      margin-top:18px;
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    footer{
-      text-align:center;
-      color:#b6c1df;
-      padding:24px 20px 35px;
-      border-top:1px solid rgba(255,255,255,0.06);
-      margin-top:18px;
-    }
-
-    .drawer{
-      position:fixed;
-      top:0;
-      left:-100%;
-      width:100%;
-      max-width:420px;
-      height:100vh;
-      background:#0f1630;
-      z-index:2000;
-      box-shadow:0 0 40px rgba(0,0,0,0.5);
-      transition:0.35s;
-      overflow-y:auto;
-    }
-
-    .drawer.open{
-      left:0;
-    }
-
-    .drawer-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-      background:#0f1630;
-      position:sticky;
-      top:0;
-    }
-
-    .drawer-title{
       font-size:22px;
-      font-weight:bold;
     }
 
-    .close-btn{
-      background:transparent;
-      color:white;
-      border:1px solid rgba(255,255,255,0.15);
-      border-radius:12px;
-      padding:10px 14px;
-      cursor:pointer;
-    }
-
-    .drawer-body{
-      padding:18px 20px 120px;
-    }
-
-    .cart-item{
-      background:rgba(255,255,255,0.04);
-      border-radius:18px;
-      padding:16px;
-      margin-bottom:12px;
-    }
-
-    .cart-item h4{
-      margin-bottom:8px;
-      font-size:18px;
-    }
-
-    .cart-item p{
-      color:#c6d0ec;
-      margin-bottom:12px;
-    }
-
-    .cart-item button{
-      background:#8b1e2d;
-      color:white;
-      border:none;
-      border-radius:12px;
-      padding:10px 14px;
-      cursor:pointer;
-    }
-
-    .drawer-footer{
-      position:fixed;
-      bottom:0;
-      left:-100%;
-      width:100%;
-      max-width:420px;
-      background:#0c1227;
-      padding:16px 20px;
-      border-top:1px solid rgba(255,255,255,0.08);
-      transition:0.35s;
-    }
-
-    .drawer-footer.open{
-      left:0;
-    }
-
-    .total{
-      text-align:center;
-      margin-bottom:12px;
-      font-weight:bold;
-      font-size:18px;
-    }
-
-    .empty{
-      text-align:center;
-      color:#c6d0ec;
+    .info-box p{
+      color:#5c6f95;
       line-height:1.8;
-      padding:25px 0;
+      font-size:15px;
     }
 
-    .notice{
+    .outline{
       max-width:1200px;
-      margin:10px auto 0;
+      margin:auto;
+      padding:20px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .outline-card{
+      background:white;
+      border-radius:24px;
+      padding:28px;
+      border:1px solid #e6ecff;
+      box-shadow:0 12px 24px rgba(0,0,0,0.06);
+    }
+
+    .outline-card h3{
+      color:#173a88;
+      margin-bottom:14px;
+      font-size:26px;
+    }
+
+    .outline-card ul{
+      padding-right:20px;
+      color:#5c6f95;
+      line-height:2;
+    }
+
+    .outline-card li{
+      margin-bottom:6px;
+    }
+
+    .timeline{
+      max-width:1200px;
+      margin:auto;
+      padding:20px;
+      display:grid;
+      gap:16px;
+    }
+
+    .time-item{
+      background:white;
+      border:1px solid #e6ecff;
+      border-radius:22px;
+      padding:22px;
+      box-shadow:0 10px 24px rgba(0,0,0,0.05);
+      display:grid;
+      grid-template-columns:160px 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .time-badge{
+      background:linear-gradient(135deg,#1e5ac9,#3b82f6);
+      color:white;
+      border-radius:16px;
+      padding:16px;
+      text-align:center;
+      font-weight:bold;
+      font-size:18px;
+    }
+
+    .time-content h4{
+      color:#173a88;
+      margin-bottom:10px;
+      font-size:22px;
+    }
+
+    .time-content p{
+      color:#5c6f95;
+      line-height:1.8;
+    }
+
+    .highlight{
+      max-width:1200px;
+      margin:20px auto;
       padding:0 20px;
     }
 
-    .notice-box{
-      background:rgba(247,201,72,0.12);
-      border:1px solid rgba(247,201,72,0.25);
-      color:#ffe08a;
-      border-radius:16px;
-      padding:14px 18px;
+    .highlight-box{
+      background:linear-gradient(135deg,#173a88,#2563eb);
+      color:white;
+      border-radius:28px;
+      padding:30px;
+      box-shadow:0 15px 30px rgba(37,99,235,0.22);
+    }
+
+    .highlight-box h3{
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    .highlight-box p{
+      color:#eef4ff;
+      line-height:1.9;
+      max-width:850px;
+    }
+
+    .footer{
       text-align:center;
-      line-height:1.8;
+      color:#5c6f95;
+      padding:28px 20px 40px;
+      margin-top:20px;
+      border-top:1px solid #dbe5ff;
     }
 
     @media (max-width:1000px){
-      .hero{
+      .hero,
+      .info-grid,
+      .outline{
         grid-template-columns:1fr;
       }
 
-      .tools{
-        grid-template-columns:1fr;
-      }
-
-      .categories,.features,.testimonials{
+      .info-grid{
         grid-template-columns:repeat(2,1fr);
-      }
-
-      .offer-box{
-        grid-template-columns:1fr;
-        text-align:center;
       }
     }
 
-    @media (max-width:650px){
+    @media (max-width:700px){
       .hero-main h1{
-        font-size:31px;
+        font-size:34px;
       }
 
-      .categories,.features,.testimonials{
+      .info-grid{
+        grid-template-columns:1fr;
+      }
+
+      .time-item{
         grid-template-columns:1fr;
       }
 
@@ -648,445 +396,234 @@
 
   <header>
     <div class="nav">
-      <div class="logo">Nova Accessories</div>
+      <div class="logo">ورشة عمل الحاسوب</div>
       <div class="menu">
         <a href="#home">الرئيسية</a>
-        <a href="#categories">التصنيفات</a>
-        <a href="#products">المنتجات</a>
-        <a href="#features">المميزات</a>
-        <a href="#contact">تواصل</a>
-        <a href="javascript:void(0)" onclick="openCart()">السلة</a>
+        <a href="#goals">الأهداف</a>
+        <a href="#topics">المحاور</a>
+        <a href="#schedule">البرنامج</a>
+        <a href="#contact">الخاتمة</a>
       </div>
     </div>
   </header>
 
   <section class="hero" id="home">
     <div class="hero-main">
-      <span class="hero-badge">متجر احترافي • سلة تفاعلية • طلب بدون إظهار الرقم</span>
-      <h1>موقع قوي لبيع إكسسوارات التلفونات</h1>
+      <span class="hero-badge">ورشة تعليمية • رسمية • قوية • مناسبة للعرض المدرسي</span>
+      <h1>ورشة عمل مادة الحاسوب<br>مهارات الحاسوب في العصر الرقمي</h1>
       <p>
-        متجر عصري بتصميم فاخر لعرض كفرات، سماعات، شواحن، باور بانك،
-        وواقيات شاشة مع تصنيفات واضحة، بحث سريع، وسلة مرتبة بدون عرض رقم هاتفك داخل الموقع.
+        ورشة تعليمية تهدف إلى تنمية مهارات الطالبات في استخدام الحاسوب والبرامج التعليمية،
+        وتعزيز الثقافة الرقمية والوعي التقني بطريقة حديثة وجذابة تجمع بين الفائدة والأسلوب الاحترافي.
       </p>
-      <div class="hero-buttons">
-        <button class="btn btn-gold" onclick="goToProducts()">تصفح المنتجات</button>
-        <button class="btn btn-green" onclick="showRequestMessage()">اطلب الآن</button>
+      <div class="hero-actions">
+        <button class="btn btn-light" onclick="goTo('schedule')">عرض البرنامج</button>
+        <button class="btn btn-outline" onclick="goTo('topics')">محاور الورشة</button>
       </div>
     </div>
 
     <div class="hero-side">
-      <div class="card-box">
-        <h3>عرض اليوم</h3>
-        <p>عند شراء 3 منتجات أو أكثر، جهّز الطلب من السلة ثم أرسله بالطريقة التي تناسبك لاحقًا بدون إظهار رقمك داخل الصفحة.</p>
+      <div class="card">
+        <h3>بيانات الورشة</h3>
+        <p>
+          <strong>إعداد وتقديم:</strong> المعلمة حصة العنزي<br>
+          <strong>الجهة:</strong> مدرسة شيماء بنت الحارث المتوسطة للبنات<br>
+          <strong>المجال:</strong> مادة الحاسوب والتقنية الرقمية
+        </p>
       </div>
 
       <div class="stats">
         <div class="stat">
-          <h4>1200+</h4>
-          <p>عميل راضٍ</p>
+          <h4>4</h4>
+          <p>محاور رئيسية</p>
         </div>
         <div class="stat">
-          <h4>250+</h4>
-          <p>منتج متنوع</p>
+          <h4>21</h4>
+          <p>مهارات رقمية</p>
         </div>
         <div class="stat">
-          <h4>24/7</h4>
-          <p>جاهزية للطلبات</p>
+          <h4>100%</h4>
+          <p>تعلم تفاعلي</p>
         </div>
         <div class="stat">
-          <h4>4.9★</h4>
-          <p>تقييم عام</p>
+          <h4>7</h4>
+          <p>أنشطة تطبيقية</p>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="notice">
-    <div class="notice-box">
-      هذا الإصدار لا يعرض أي رقم هاتف داخل الموقع. أزرار الطلب تعرض رسالة فقط أو تنسخ تفاصيل الطلب بدون كشف رقمك.
-    </div>
+  <div class="section-title" id="goals">
+    <h2>أهداف الورشة</h2>
+    <p>ترتكز هذه الورشة على بناء معرفة أساسية قوية وتمكين الطالبات من استخدام الحاسوب بطريقة آمنة ومفيدة داخل البيئة التعليمية.</p>
   </div>
 
-  <div class="tools">
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="ابحث عن منتج..." onkeyup="applyFilters()">
+  <section class="info-grid">
+    <div class="info-box">
+      <div class="icon">💻</div>
+      <h3>التعرف على الحاسوب</h3>
+      <p>تعريف الطالبات بمكونات الحاسوب الأساسية ووظيفة كل جزء وأهمية الجهاز في الحياة التعليمية اليومية.</p>
     </div>
 
-    <div class="filter-box">
-      <select id="categoryFilter" onchange="applyFilters()">
-        <option value="all">كل التصنيفات</option>
-        <option value="covers">كفرات</option>
-        <option value="chargers">شواحن</option>
-        <option value="audio">سماعات</option>
-        <option value="protection">واقيات</option>
-        <option value="power">باور بانك</option>
-      </select>
+    <div class="info-box">
+      <div class="icon">🌐</div>
+      <h3>تنمية الوعي الرقمي</h3>
+      <p>غرس مفهوم الاستخدام الصحيح للتقنية والإنترنت، وتعزيز السلوك الرقمي الواعي والآمن.</p>
     </div>
 
-    <div class="cart-box" onclick="openCart()">
-      🛒 السلة: <span id="cartCount">0</span>
-    </div>
-  </div>
-
-  <div class="section-title" id="categories">
-    <h2>التصنيفات</h2>
-    <p>اختر التصنيف المناسب أو استخدم البحث للوصول السريع إلى المنتج المطلوب.</p>
-  </div>
-
-  <section class="categories">
-    <div class="cat active" onclick="setCategory('all', this)">
-      <div class="icon">🛍️</div>
-      <h3>الكل</h3>
-      <p>عرض جميع المنتجات</p>
-    </div>
-
-    <div class="cat" onclick="setCategory('covers', this)">
-      <div class="icon">📱</div>
-      <h3>كفرات</h3>
-      <p>حماية وأناقة</p>
-    </div>
-
-    <div class="cat" onclick="setCategory('chargers', this)">
-      <div class="icon">🔌</div>
-      <h3>شواحن</h3>
-      <p>شحن سريع وعملي</p>
-    </div>
-
-    <div class="cat" onclick="setCategory('audio', this)">
-      <div class="icon">🎧</div>
-      <h3>سماعات</h3>
-      <p>جودة صوت ممتازة</p>
+    <div class="info-box">
+      <div class="icon">📘</div>
+      <h3>استخدام البرامج التعليمية</h3>
+      <p>تدريب الطالبات على التعامل مع البرامج الأساسية مثل الكتابة والعروض والرسم والأنشطة التفاعلية.</p>
     </div>
   </section>
 
-  <div class="section-title" id="products">
-    <h2>أحدث المنتجات</h2>
-    <p>منتجات معروضة بشكل احترافي مع الأسعار والتقييمات وأزرار الطلب بدون كشف الرقم.</p>
+  <div class="section-title" id="topics">
+    <h2>محاور الورشة</h2>
+    <p>تم تنظيم محاور الورشة بأسلوب متدرج يجمع بين المعرفة الأساسية والتطبيق العملي داخل الحصة.</p>
   </div>
 
-  <section class="products" id="productGrid">
-
-    <div class="product" data-category="covers" data-name="كفر حماية فاخر">
-      <span class="tag">خصم 15%</span>
-      <img src="https://images.unsplash.com/photo-1601972599720-b5a4b8cfcaf0?auto=format&fit=crop&w=1000&q=80" alt="كفر حماية فاخر">
-      <div class="product-body">
-        <h3>كفر حماية فاخر</h3>
-        <p class="desc">كفر أنيق بخامات ممتازة يحمي الهاتف من الصدمات والخدوش ويعطيه مظهرًا راقيًا.</p>
-        <div class="stars">★★★★★</div>
-        <div class="price">
-          <span class="old-price">8.0 د.ك</span>
-          <span class="new-price">6.8 د.ك</span>
-        </div>
-        <div class="actions">
-          <button class="btn btn-dark" onclick="addToCart('كفر حماية فاخر', 6.8)">أضف إلى السلة</button>
-          <button class="btn btn-green" onclick="requestProduct('كفر حماية فاخر', '6.8 د.ك')">طلب المنتج</button>
-          <button class="btn btn-outline" onclick="showDetails('كفر حماية فاخر','كفر بخامات ممتازة وحماية إضافية للحواف.')">عرض التفاصيل</button>
-        </div>
-      </div>
+  <section class="outline">
+    <div class="outline-card">
+      <h3>المحور الأول</h3>
+      <ul>
+        <li>مفهوم الحاسوب وأهميته</li>
+        <li>مكونات الحاسوب الأساسية</li>
+        <li>أجزاء الإدخال والإخراج</li>
+        <li>كيفية تشغيل الجهاز واستخدامه بطريقة صحيحة</li>
+      </ul>
     </div>
 
-    <div class="product" data-category="chargers" data-name="شاحن سريع 25W">
-      <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=1000&q=80" alt="شاحن سريع 25W">
-      <div class="product-body">
-        <h3>شاحن سريع 25W</h3>
-        <p class="desc">شاحن عملي بجودة ممتازة وأداء ثابت مناسب للاستخدام اليومي والشحن السريع.</p>
-        <div class="stars">★★★★☆</div>
-        <div class="price">
-          <span class="new-price">7.5 د.ك</span>
-        </div>
-        <div class="actions">
-          <button class="btn btn-dark" onclick="addToCart('شاحن سريع 25W', 7.5)">أضف إلى السلة</button>
-          <button class="btn btn-green" onclick="requestProduct('شاحن سريع 25W', '7.5 د.ك')">طلب المنتج</button>
-          <button class="btn btn-outline" onclick="showDetails('شاحن سريع 25W','شاحن سريع مناسب للاستعمال اليومي.')">عرض التفاصيل</button>
-        </div>
-      </div>
+    <div class="outline-card">
+      <h3>المحور الثاني</h3>
+      <ul>
+        <li>التعرف على البرامج الأساسية</li>
+        <li>برامج الكتابة والعروض</li>
+        <li>برامج الرسم والتعلم التفاعلي</li>
+        <li>حفظ الملفات وتنظيمها</li>
+      </ul>
     </div>
 
-    <div class="product" data-category="audio" data-name="سماعات بلوتوث برو">
-      <span class="tag">الأكثر مبيعًا</span>
-      <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1000&q=80" alt="سماعات بلوتوث برو">
-      <div class="product-body">
-        <h3>سماعات بلوتوث برو</h3>
-        <p class="desc">سماعات لاسلكية بصوت نقي وتصميم مريح ومناسبة للمكالمات والاستماع اليومي.</p>
-        <div class="stars">★★★★★</div>
-        <div class="price">
-          <span class="new-price">12 د.ك</span>
-        </div>
-        <div class="actions">
-          <button class="btn btn-dark" onclick="addToCart('سماعات بلوتوث برو', 12)">أضف إلى السلة</button>
-          <button class="btn btn-green" onclick="requestProduct('سماعات بلوتوث برو', '12 د.ك')">طلب المنتج</button>
-          <button class="btn btn-outline" onclick="showDetails('سماعات بلوتوث برو','سماعات بصوت واضح وبطارية جيدة وتصميم عصري.')">عرض التفاصيل</button>
-        </div>
-      </div>
+    <div class="outline-card">
+      <h3>المحور الثالث</h3>
+      <ul>
+        <li>استخدام الإنترنت في التعلم</li>
+        <li>البحث عن المعلومات</li>
+        <li>المواقع التعليمية المفيدة</li>
+        <li>قواعد الأمان الرقمي</li>
+      </ul>
     </div>
 
-    <div class="product" data-category="protection" data-name="واقي شاشة زجاجي">
-      <img src="https://images.unsplash.com/photo-1619974121344-3f15e9d91a1b?auto=format&fit=crop&w=1000&q=80" alt="واقي شاشة زجاجي">
-      <div class="product-body">
-        <h3>واقي شاشة زجاجي</h3>
-        <p class="desc">حماية ممتازة ضد الخدوش والكسر مع شفافية عالية ولمس سلس أثناء الاستخدام.</p>
-        <div class="stars">★★★★☆</div>
-        <div class="price">
-          <span class="new-price">3.5 د.ك</span>
-        </div>
-        <div class="actions">
-          <button class="btn btn-dark" onclick="addToCart('واقي شاشة زجاجي', 3.5)">أضف إلى السلة</button>
-          <button class="btn btn-green" onclick="requestProduct('واقي شاشة زجاجي', '3.5 د.ك')">طلب المنتج</button>
-          <button class="btn btn-outline" onclick="showDetails('واقي شاشة زجاجي','زجاج حماية شفاف وسهل التركيب.')">عرض التفاصيل</button>
-        </div>
-      </div>
+    <div class="outline-card">
+      <h3>المحور الرابع</h3>
+      <ul>
+        <li>نشاط تطبيقي عملي</li>
+        <li>فتح برنامج الرسم</li>
+        <li>تنفيذ مهمة بسيطة</li>
+        <li>حفظ العمل ومشاركته</li>
+      </ul>
     </div>
-
-    <div class="product" data-category="power" data-name="باور بانك 20000">
-      <span class="tag">جديد</span>
-      <img src="https://images.unsplash.com/photo-1587033411391-5d9e51cce126?auto=format&fit=crop&w=1000&q=80" alt="باور بانك 20000">
-      <div class="product-body">
-        <h3>باور بانك 20000</h3>
-        <p class="desc">بطارية متنقلة قوية مناسبة للسفر والتنقل مع شحن ثابت وسعة ممتازة.</p>
-        <div class="stars">★★★★★</div>
-        <div class="price">
-          <span class="old-price">12 د.ك</span>
-          <span class="new-price">10 د.ك</span>
-        </div>
-        <div class="actions">
-          <button class="btn btn-dark" onclick="addToCart('باور بانك 20000', 10)">أضف إلى السلة</button>
-          <button class="btn btn-green" onclick="requestProduct('باور بانك 20000', '10 د.ك')">طلب المنتج</button>
-          <button class="btn btn-outline" onclick="showDetails('باور بانك 20000','باور بانك قوي مناسب للسفر والعمل.')">عرض التفاصيل</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product" data-category="covers" data-name="كفر شفاف مرن">
-      <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=1000&q=80" alt="كفر شفاف مرن">
-      <div class="product-body">
-        <h3>كفر شفاف مرن</h3>
-        <p class="desc">كفر خفيف وشفاف يحافظ على شكل الهاتف الأصلي مع حماية يومية عملية.</p>
-        <div class="stars">★★★★☆</div>
-        <div class="price">
-          <span class="new-price">4.0 د.ك</span>
-        </div>
-        <div class="actions">
-          <button class="btn btn-dark" onclick="addToCart('كفر شفاف مرن', 4.0)">أضف إلى السلة</button>
-          <button class="btn btn-green" onclick="requestProduct('كفر شفاف مرن', '4.0 د.ك')">طلب المنتج</button>
-          <button class="btn btn-outline" onclick="showDetails('كفر شفاف مرن','كفر مرن وخفيف يبرز لون الهاتف الأصلي.')">عرض التفاصيل</button>
-        </div>
-      </div>
-    </div>
-
   </section>
 
-  <section class="offer">
-    <div class="offer-box">
-      <div>
-        <h3>سلة جاهزة للنسخ</h3>
-        <p>أضف المنتجات التي تريدها، ثم افتح السلة وانسخ تفاصيل الطلب بدون إرسالها لأي رقم ظاهر في الموقع.</p>
+  <div class="section-title" id="schedule">
+    <h2>البرنامج الزمني للورشة</h2>
+    <p>يمكن تقديم هذه الفقرات داخل حصة واحدة أو توزيعها حسب زمن الورشة المتاح.</p>
+  </div>
+
+  <section class="timeline">
+    <div class="time-item">
+      <div class="time-badge">10 دقائق</div>
+      <div class="time-content">
+        <h4>الافتتاح والتمهيد</h4>
+        <p>الترحيب بالطالبات، التعريف بعنوان الورشة، وذكر أهمية مهارات الحاسوب في الحياة اليومية والدراسة.</p>
       </div>
-      <div>
-        <button class="btn btn-gold" onclick="openCart()">افتح السلة</button>
+    </div>
+
+    <div class="time-item">
+      <div class="time-badge">15 دقيقة</div>
+      <div class="time-content">
+        <h4>شرح مكونات الحاسوب</h4>
+        <p>عرض الأجهزة الأساسية مثل الشاشة ولوحة المفاتيح والفأرة ووحدة النظام مع شرح دور كل جزء.</p>
+      </div>
+    </div>
+
+    <div class="time-item">
+      <div class="time-badge">15 دقيقة</div>
+      <div class="time-content">
+        <h4>البرامج التعليمية</h4>
+        <p>التعرف على برامج الكتابة والرسم والعروض التقديمية، وكيف يمكن استخدامها في الدراسة والأنشطة.</p>
+      </div>
+    </div>
+
+    <div class="time-item">
+      <div class="time-badge">10 دقائق</div>
+      <div class="time-content">
+        <h4>الأمان الرقمي</h4>
+        <p>توعية الطالبات بأهمية حماية المعلومات الشخصية وعدم فتح الروابط غير المعروفة واحترام قواعد الاستخدام الآمن.</p>
+      </div>
+    </div>
+
+    <div class="time-item">
+      <div class="time-badge">10 دقائق</div>
+      <div class="time-content">
+        <h4>النشاط التطبيقي</h4>
+        <p>تنفيذ نشاط عملي مثل رسم شكل بسيط على الحاسوب أو كتابة عنوان وحفظ الملف داخل الجهاز.</p>
       </div>
     </div>
   </section>
 
-  <div class="section-title" id="features">
-    <h2>مميزات المتجر</h2>
-    <p>تصميم احترافي وتجربة واضحة مع الحفاظ على خصوصية بياناتك وعدم إظهار رقم الهاتف.</p>
-  </div>
-
-  <section class="features">
-    <div class="feature">
-      <h4>بحث سريع</h4>
-      <p>الوصول للمنتج المطلوب بسرعة عبر خانة البحث.</p>
-    </div>
-    <div class="feature">
-      <h4>تصنيفات واضحة</h4>
-      <p>تقسيم المنتجات إلى أقسام يسهل التصفح.</p>
-    </div>
-    <div class="feature">
-      <h4>سلة تفاعلية</h4>
-      <p>جمع المنتجات داخل سلة وعرض الإجمالي بشكل مرتب.</p>
-    </div>
-    <div class="feature">
-      <h4>خصوصية أكثر</h4>
-      <p>لا يتم عرض أي رقم هاتف داخل الموقع أو الروابط.</p>
+  <section class="highlight">
+    <div class="highlight-box">
+      <h3>نواتج التعلم المتوقعة</h3>
+      <p>
+        في نهاية الورشة تكون الطالبة قادرة على التعرف على الحاسوب ومكوناته، واستخدام بعض البرامج الأساسية،
+        والاستفادة من الإنترنت في التعلم، وتطبيق قواعد الأمان الرقمي داخل البيئة المدرسية وخارجها.
+      </p>
     </div>
   </section>
 
   <div class="section-title">
-    <h2>آراء العملاء</h2>
-    <p>إضافة هذا القسم يعطي الموقع شكلًا أقرب للمتاجر الحقيقية.</p>
+    <h2>أنشطة مقترحة داخل الورشة</h2>
+    <p>يمكن تقديم الورشة بأسلوب تفاعلي لرفع مستوى المشاركة وجعل الحصة أكثر حيوية وفائدة.</p>
   </div>
 
-  <section class="testimonials">
-    <div class="testimonial">
-      <h4>متجر أنيق</h4>
-      <p>الموقع مرتب جدًا وواضح، وطريقة عرض المنتجات ممتازة.</p>
-      <div class="name">— عميلة من الكويت</div>
+  <section class="info-grid">
+    <div class="info-box">
+      <div class="icon">🖍️</div>
+      <h3>نشاط الرسم</h3>
+      <p>فتح برنامج الرسم وتنفيذ رسمة بسيطة ثم حفظها باسم الطالبة داخل الجهاز.</p>
     </div>
-    <div class="testimonial">
-      <h4>منتجات جميلة</h4>
-      <p>التصميم قوي وعرض المنتجات ممتاز جدًا.</p>
-      <div class="name">— عميل جديد</div>
+
+    <div class="info-box">
+      <div class="icon">🏆</div>
+      <h3>مسابقة تقنية</h3>
+      <p>طرح أسئلة قصيرة حول أجزاء الحاسوب أو استخدام البرامج مع تقديم تعزيز فوري للمشاركات.</p>
     </div>
-    <div class="testimonial">
-      <h4>شكل احترافي</h4>
-      <p>المتجر يعطي ثقة خصوصًا مع السلة والبحث والتصنيفات.</p>
-      <div class="name">— زائر للموقع</div>
-    </div>
-    <div class="testimonial">
-      <h4>مرتب وواضح</h4>
-      <p>التصميم واضح جدًا خصوصًا على الجوال.</p>
-      <div class="name">— عميل متكرر</div>
+
+    <div class="info-box">
+      <div class="icon">🎥</div>
+      <h3>فيديو تعليمي</h3>
+      <p>عرض مقطع قصير يوضح دور الحاسوب في حياتنا اليومية بطريقة مبسطة ومناسبة للمرحلة المتوسطة.</p>
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <div class="contact-box2">
-      <h3>جاهز تطلق متجرك؟</h3>
+    <div class="highlight-box">
+      <h3>الخاتمة</h3>
       <p>
-        هذا المتجر مصمم ليعرض المنتجات بدقة أفضل مع الحفاظ على خصوصية رقمك. يمكنك لاحقًا ربطه بنموذج طلب أو بريد إلكتروني.
+        تمثل مهارات الحاسوب أساسًا مهمًا في بناء جيل قادر على التفاعل مع التقنية بإيجابية ووعي.
+        ومن خلال هذه الورشة يتم تمكين الطالبات من مهارات عملية ومعرفية تعزز التعلم وتواكب متطلبات العصر الرقمي.
       </p>
-      <div class="contact-actions">
-        <button class="btn btn-gold" onclick="scrollTopPage()">العودة للأعلى</button>
-        <button class="btn btn-dark" onclick="showRequestMessage()">طريقة الطلب</button>
-      </div>
     </div>
   </section>
 
-  <footer>
-    جميع الحقوق محفوظة © 2026 - Nova Accessories
-  </footer>
-
-  <div class="drawer" id="cartDrawer">
-    <div class="drawer-header">
-      <div class="drawer-title">سلة المشتريات</div>
-      <button class="close-btn" onclick="closeCart()">إغلاق</button>
-    </div>
-    <div class="drawer-body" id="cartItems"></div>
-  </div>
-
-  <div class="drawer-footer" id="drawerFooter">
-    <div class="total">الإجمالي: <span id="cartTotal">0.0</span> د.ك</div>
-    <button class="btn btn-gold" style="width:100%;" onclick="copyCartOrder()">نسخ تفاصيل الطلب</button>
+  <div class="footer">
+    إعداد وتقديم: المعلمة حصة العنزي — مدرسة شيماء بنت الحارث المتوسطة للبنات
   </div>
 
   <script>
-    let cart = [];
-
-    function goToProducts(){
-      document.getElementById("products").scrollIntoView({behavior:"smooth"});
+    function goTo(id){
+      document.getElementById(id).scrollIntoView({behavior:"smooth"});
     }
-
-    function scrollTopPage(){
-      window.scrollTo({top:0, behavior:"smooth"});
-    }
-
-    function showRequestMessage(){
-      alert("يمكنك استخدام السلة ثم نسخ تفاصيل الطلب وإرسالها بالطريقة المناسبة لك بدون إظهار رقم داخل الموقع.");
-    }
-
-    function requestProduct(product, price){
-      alert("تم اختيار: " + product + "\\nالسعر: " + price + "\\nيمكنك إضافته للسلة ثم نسخ تفاصيل الطلب.");
-    }
-
-    function showDetails(name, description){
-      alert(name + "\\n\\n" + description);
-    }
-
-    function addToCart(name, price){
-      cart.push({name, price});
-      updateCart();
-      alert("تمت إضافة " + name + " إلى السلة");
-    }
-
-    function removeFromCart(index){
-      cart.splice(index, 1);
-      updateCart();
-    }
-
-    function updateCart(){
-      document.getElementById("cartCount").innerText = cart.length;
-      const itemsContainer = document.getElementById("cartItems");
-      const totalElement = document.getElementById("cartTotal");
-      itemsContainer.innerHTML = "";
-
-      if(cart.length === 0){
-        itemsContainer.innerHTML = '<div class="empty">السلة فارغة حاليًا.<br>أضف بعض المنتجات أولًا.</div>';
-        totalElement.innerText = "0.0";
-        return;
-      }
-
-      let total = 0;
-      cart.forEach((item, index) => {
-        total += item.price;
-        itemsContainer.innerHTML += `
-          <div class="cart-item">
-            <h4>${item.name}</h4>
-            <p>السعر: ${item.price.toFixed(1)} د.ك</p>
-            <button onclick="removeFromCart(${index})">حذف من السلة</button>
-          </div>
-        `;
-      });
-
-      totalElement.innerText = total.toFixed(1);
-    }
-
-    function openCart(){
-      document.getElementById("cartDrawer").classList.add("open");
-      document.getElementById("drawerFooter").classList.add("open");
-    }
-
-    function closeCart(){
-      document.getElementById("cartDrawer").classList.remove("open");
-      document.getElementById("drawerFooter").classList.remove("open");
-    }
-
-    function copyCartOrder(){
-      if(cart.length === 0){
-        alert("السلة فارغة");
-        return;
-      }
-
-      let total = 0;
-      let message = "تفاصيل الطلب:\\n\\n";
-
-      cart.forEach((item, i) => {
-        total += item.price;
-        message += (i + 1) + "- " + item.name + " | " + item.price.toFixed(1) + " د.ك\\n";
-      });
-
-      message += "\\nالإجمالي: " + total.toFixed(1) + " د.ك";
-
-      navigator.clipboard.writeText(message).then(() => {
-        alert("تم نسخ تفاصيل الطلب");
-      }).catch(() => {
-        alert(message);
-      });
-    }
-
-    function applyFilters(){
-      const search = document.getElementById("searchInput").value.toLowerCase().trim();
-      const category = document.getElementById("categoryFilter").value;
-      const products = document.querySelectorAll(".product");
-
-      products.forEach(product => {
-        const name = product.dataset.name.toLowerCase();
-        const productCategory = product.dataset.category;
-        const matchesSearch = name.includes(search);
-        const matchesCategory = category === "all" || productCategory === category;
-
-        product.style.display = (matchesSearch && matchesCategory) ? "block" : "none";
-      });
-    }
-
-    function setCategory(category, element){
-      document.getElementById("categoryFilter").value = category;
-      document.querySelectorAll(".cat").forEach(cat => cat.classList.remove("active"));
-      element.classList.add("active");
-      applyFilters();
-      goToProducts();
-    }
-
-    updateCart();
   </script>
 </body>
-      </html>
+</html>
