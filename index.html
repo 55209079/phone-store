@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Accessories | متجر إكسسوارات الهواتف</title>
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:Arial,sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:linear-gradient(180deg,#0b1020,#111935 45%,#0d1429 100%);
+      color:#fff;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(10,15,30,0.92);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(10px);
+    }
+
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      padding:16px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:#f7c948;
+    }
+
+    .menu{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .menu a{
+      color:#fff;
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:12px;
+      transition:0.3s;
+    }
+
+    .menu a:hover{
+      background:rgba(255,255,255,0.08);
+    }
+
+    .hero{
+      max-width:1200px;
+      margin:auto;
+      padding:50px 20px 25px;
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:20px;
+    }
+
+    .hero-main{
+      background:
+      linear-gradient(rgba(10,15,30,0.72),rgba(16,25,52,0.82)),
+      url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1400&q=80') center/cover;
+      border-radius:24px;
+      padding:45px 30px;
+      min-height:400px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      box-shadow:0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .hero-badge{
+      display:inline-block;
+      background:rgba(247,201,72,0.15);
+      color:#f7c948;
+      border:1px solid rgba(247,201,72,0.25);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:14px;
+      margin-bottom:18px;
+      width:fit-content;
+    }
+
+    .hero-main h1{
+      font-size:44px;
+      margin-bottom:16px;
+      line-height:1.2;
+    }
+
+    .hero-main p{
+      color:#d0d8f0;
+      line-height:1.9;
+      font-size:17px;
+      max-width:650px;
+    }
+
+    .hero-buttons{
+      margin-top:24px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border:none;
+      border-radius:14px;
+      padding:14px 20px;
+      font-size:15px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-gold{
+      background:#f7c948;
+      color:#111;
+    }
+
+    .btn-green{
+      background:#25D366;
+      color:white;
+    }
+
+    .hero-side{
+      display:grid;
+      gap:16px;
+    }
+
+    .card-box{
+      background:rgba(18,26,52,0.92);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .card-box h3{
+      margin-bottom:10px;
+      font-size:24px;
+      color:#fff;
+    }
+
+    .card-box p{
+      color:#c6d0ec;
+      line-height:1.8;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,0.04);
+      border-radius:18px;
+      padding:18px;
+      text-align:center;
+    }
+
+    .stat h4{
+      color:#f7c948;
+      font-size:26px;
+      margin-bottom:8px;
+    }
+
+    .stat p{
+      color:#c6d0ec;
+      font-size:14px;
+    }
+
+    .tools{
+      max-width:1200px;
+      margin:auto;
+      padding:0 20px 20px;
+      display:grid;
+      grid-template-columns:1fr auto auto;
+      gap:14px;
+      align-items:center;
+    }
+
+    .search-box,.filter-box,.cart-box{
+      background:rgba(18,26,52,0.95);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,0.2);
+    }
+
+    .search-box input,
+    .filter-box select{
+      width:100%;
+      background:transparent;
+      border:none;
+      outline:none;
+      color:white;
+      padding:16px;
+      font-size:15px;
+    }
+
+    .filter-box select option{
+      color:#111;
+    }
+
+    .cart-box{
+      padding:16px 18px;
+      min-width:170px;
+      text-align:center;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .section-title{
+      max-width:1200px;
+      margin:auto;
+      text-align:center;
+      padding:10px 20px 16px;
+    }
+
+    .section-title h2{
+      font-size:34px;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#c6d0ec;
+      line-height:1.8;
+      max-width:700px;
+      margin:auto;
+    }
+
+    .categories{
+      max-width:1200px;
+      margin:auto;
+      padding:10px 20px 10px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .cat{
+      background:rgba(18,26,52,0.92);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:20px;
+      padding:22px;
+      text-align:center;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .cat:hover,.cat.active{
+      transform:translateY(-4px);
+      border-color:rgba(247,201,72,0.35);
+    }
+
+    .cat .icon{
+      font-size:32px;
+      margin-bottom:10px;
+    }
+
+    .cat h3{
+      margin-bottom:8px;
+      font-size:20px;
+    }
+
+    .cat p{
+      color:#c6d0ec;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .products{
+      max-width:1200px;
+      margin:auto;
+      padding:24px 20px 10px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+      gap:22px;
+    }
+
+    .product{
+      background:linear-gradient(180deg,#161f41,#101831);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 12px 30px rgba(0,0,0,0.3);
+      position:relative;
+      transition:0.3s;
+    }
+
+    .product:hover{
+      transform:translateY(-6px);
+    }
+
+    .tag{
+      position:absolute;
+      top:14px;
+      left:14px;
+      background:#ff5c5c;
+      color:white;
+      padding:7px 11px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:bold;
+      z-index:2;
+    }
+
+    .product img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .product-body{
+      padding:18px;
+      text-align:center;
+    }
+
+    .product-body h3{
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .desc{
+      color:#c6d0ec;
+      font-size:14px;
+      line-height:1.8;
+      min-height:74px;
+    }
+
+    .stars{
+      color:#f7c948;
+      margin:12px 0;
+      font-size:18px;
+    }
+
+    .price{
+      margin-bottom:14px;
+    }
+
+    .old-price{
+      color:#97a6d3;
+      text-decoration:line-through;
+      font-size:14px;
+      margin-left:6px;
+    }
+
+    .new-price{
+      color:#54e39b;
+      font-size:24px;
+      font-weight:bold;
+    }
+
+    .actions{
+      display:grid;
+      gap:10px;
+    }
+
+    .btn-dark{
+      background:#22305c;
+      color:white;
+    }
+
+    .btn-outline{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.15);
+      color:white;
+    }
+
+    .offer{
+      max-width:1200px;
+      margin:25px auto;
+      padding:0 20px;
+    }
+
+    .offer-box{
+      background:linear-gradient(135deg,#162550,#101931);
+      border-radius:24px;
+      padding:28px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
+      align-items:center;
+      box-shadow:0 12px 28px rgba(0,0,0,0.28);
+    }
+
+    .offer-box h3{
+      font-size:30px;
+      color:#f7c948;
+      margin-bottom:10px;
+    }
+
+    .offer-box p{
+      color:#c6d0ec;
+      line-height:1.8;
+      max-width:700px;
+    }
+
+    .features,.testimonials{
+      max-width:1200px;
+      margin:auto;
+      padding:10px 20px 20px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .feature,.testimonial{
+      background:rgba(18,26,52,0.92);
+      border-radius:20px;
+      padding:22px;
+      box-shadow:0 10px 24px rgba(0,0,0,0.2);
+    }
+
+    .feature h4,.testimonial h4{
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    .feature p,.testimonial p{
+      color:#c6d0ec;
+      line-height:1.8;
+      font-size:14px;
+    }
+
+    .testimonial .name{
+      margin-top:14px;
+      font-weight:bold;
+    }
+
+    .contact{
+      max-width:1200px;
+      margin:auto;
+      padding:20px;
+    }
+
+    .contact-box2{
+      background:linear-gradient(180deg,#161f41,#101831);
+      border-radius:24px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .contact-box2 h3{
+      font-size:30px;
+      margin-bottom:12px;
+    }
+
+    .contact-box2 p{
+      color:#c6d0ec;
+      line-height:1.9;
+      max-width:700px;
+      margin:auto;
+    }
+
+    .contact-actions{
+      margin-top:18px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    footer{
+      text-align:center;
+      color:#b6c1df;
+      padding:24px 20px 35px;
+      border-top:1px solid rgba(255,255,255,0.06);
+      margin-top:18px;
+    }
+
+    .drawer{
+      position:fixed;
+      top:0;
+      left:-100%;
+      width:100%;
+      max-width:420px;
+      height:100vh;
+      background:#0f1630;
+      z-index:2000;
+      box-shadow:0 0 40px rgba(0,0,0,0.5);
+      transition:0.35s;
+      overflow-y:auto;
+    }
+
+    .drawer.open{
+      left:0;
+    }
+
+    .drawer-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      background:#0f1630;
+      position:sticky;
+      top:0;
+    }
+
+    .drawer-title{
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    .close-btn{
+      background:transparent;
+      color:white;
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:12px;
+      padding:10px 14px;
+      cursor:pointer;
+    }
+
+    .drawer-body{
+      padding:18px 20px 120px;
+    }
+
+    .cart-item{
+      background:rgba(255,255,255,0.04);
+      border-radius:18px;
+      padding:16px;
+      margin-bottom:12px;
+    }
+
+    .cart-item h4{
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
+    .cart-item p{
+      color:#c6d0ec;
+      margin-bottom:12px;
+    }
+
+    .cart-item button{
+      background:#8b1e2d;
+      color:white;
+      border:none;
+      border-radius:12px;
+      padding:10px 14px;
+      cursor:pointer;
+    }
+
+    .drawer-footer{
+      position:fixed;
+      bottom:0;
+      left:-100%;
+      width:100%;
+      max-width:420px;
+      background:#0c1227;
+      padding:16px 20px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      transition:0.35s;
+    }
+
+    .drawer-footer.open{
+      left:0;
+    }
+
+    .total{
+      text-align:center;
+      margin-bottom:12px;
+      font-weight:bold;
+      font-size:18px;
+    }
+
+    .empty{
+      text-align:center;
+      color:#c6d0ec;
+      line-height:1.8;
+      padding:25px 0;
+    }
+
+    @media (max-width:1000px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .tools{
+        grid-template-columns:1fr;
+      }
+
+      .categories,.features,.testimonials{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .offer-box{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+    }
+
+    @media (max-width:650px){
+      .hero-main h1{
+        font-size:31px;
+      }
+
+      .categories,.features,.testimonials{
+        grid-template-columns:1fr;
+      }
+
+      .nav{
+        justify-content:center;
+      }
+
+      .menu{
+        justify-content:center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="logo">Nova Accessories</div>
+      <div class="menu">
+        <a href="#home">الرئيسية</a>
+        <a href="#categories">التصنيفات</a>
+        <a href="#products">المنتجات</a>
+        <a href="#features">المميزات</a>
+        <a href="#contact">تواصل</a>
+        <a href="javascript:void(0)" onclick="openCart()">السلة</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-main">
+      <span class="hero-badge">متجر احترافي • سلة تفاعلية • طلب مباشر عبر واتساب</span>
+      <h1>موقع قوي لبيع إكسسوارات التلفونات</h1>
+      <p>
+        متجر عصري بتصميم فاخر لعرض كفرات، سماعات، شواحن، باور بانك،
+        وواقيات شاشة مع تصنيفات واضحة، بحث سريع، وسلة ترسل الطلب مباشرة إلى واتساب.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-gold" onclick="goToProducts()">تصفح المنتجات</button>
+        <button class="btn btn-green" onclick="contactWhatsApp()">اطلب الآن</button>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <div class="card-box">
+        <h3>عرض اليوم</h3>
+        <p>عند شراء 3 منتجات أو أكثر، تواصل عبر واتساب لتحصل على خصم إضافي خاص.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <h4>1200+</h4>
+          <p>عميل راضٍ</p>
+        </div>
+        <div class="stat">
+          <h4>250+</h4>
+          <p>منتج متنوع</p>
+        </div>
+        <div class="stat">
+          <h4>24/7</h4>
+          <p>دعم واتساب</p>
+        </div>
+        <div class="stat">
+          <h4>4.9★</h4>
+          <p>تقييم عام</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tools">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="ابحث عن منتج..." onkeyup="applyFilters()">
+    </div>
+
+    <div class="filter-box">
+      <select id="categoryFilter" onchange="applyFilters()">
+        <option value="all">كل التصنيفات</option>
+        <option value="covers">كفرات</option>
+        <option value="chargers">شواحن</option>
+        <option value="audio">سماعات</option>
+        <option value="protection">واقيات</option>
+        <option value="power">باور بانك</option>
+      </select>
+    </div>
+
+    <div class="cart-box" onclick="openCart()">
+      🛒 السلة: <span id="cartCount">0</span>
+    </div>
+  </div>
+
+  <div class="section-title" id="categories">
+    <h2>التصنيفات</h2>
+    <p>اختر التصنيف المناسب أو استخدم البحث للوصول السريع إلى المنتج المطلوب.</p>
+  </div>
+
+  <section class="categories">
+    <div class="cat active" onclick="setCategory('all', this)">
+      <div class="icon">🛍️</div>
+      <h3>الكل</h3>
+      <p>عرض جميع المنتجات</p>
+    </div>
+
+    <div class="cat" onclick="setCategory('covers', this)">
+      <div class="icon">📱</div>
+      <h3>كفرات</h3>
+      <p>حماية وأناقة</p>
+    </div>
+
+    <div class="cat" onclick="setCategory('chargers', this)">
+      <div class="icon">🔌</div>
+      <h3>شواحن</h3>
+      <p>شحن سريع وعملي</p>
+    </div>
+
+    <div class="cat" onclick="setCategory('audio', this)">
+      <div class="icon">🎧</div>
+      <h3>سماعات</h3>
+      <p>جودة صوت ممتازة</p>
+    </div>
+  </section>
+
+  <div class="section-title" id="products">
+    <h2>أحدث المنتجات</h2>
+    <p>منتجات معروضة بشكل احترافي مع الأسعار والتقييمات وأزرار الطلب المباشر.</p>
+  </div>
+
+  <section class="products" id="productGrid">
+
+    <div class="product" data-category="covers" data-name="كفر حماية فاخر">
+      <span class="tag">خصم 15%</span>
+      <img src="https://images.unsplash.com/photo-1601972599720-b5a4b8cfcaf0?auto=format&fit=crop&w=1000&q=80" alt="كفر حماية فاخر">
+      <div class="product-body">
+        <h3>كفر حماية فاخر</h3>
+        <p class="desc">كفر أنيق بخامات ممتازة يحمي الهاتف من الصدمات والخدوش ويعطيه مظهرًا راقيًا.</p>
+        <div class="stars">★★★★★</div>
+        <div class="price">
+          <span class="old-price">8.0 د.ك</span>
+          <span class="new-price">6.8 د.ك</span>
+        </div>
+        <div class="actions">
+          <button class="btn btn-dark" onclick="addToCart('كفر حماية فاخر', 6.8)">أضف إلى السلة</button>
+          <button class="btn btn-green" onclick="orderWhatsApp('كفر حماية فاخر', '6.8 د.ك')">اطلب عبر واتساب</button>
+          <button class="btn btn-outline" onclick="showDetails('كفر حماية فاخر','كفر بخامات ممتازة وحماية إضافية للحواف.')">عرض التفاصيل</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-category="chargers" data-name="شاحن سريع 25W">
+      <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=1000&q=80" alt="شاحن سريع 25W">
+      <div class="product-body">
+        <h3>شاحن سريع 25W</h3>
+        <p class="desc">شاحن عملي بجودة ممتازة وأداء ثابت مناسب للاستخدام اليومي والشحن السريع.</p>
+        <div class="stars">★★★★☆</div>
+        <div class="price">
+          <span class="new-price">7.5 د.ك</span>
+        </div>
+        <div class="actions">
+          <button class="btn btn-dark" onclick="addToCart('شاحن سريع 25W', 7.5)">أضف إلى السلة</button>
+          <button class="btn btn-green" onclick="orderWhatsApp('شاحن سريع 25W', '7.5 د.ك')">اطلب عبر واتساب</button>
+          <button class="btn btn-outline" onclick="showDetails('شاحن سريع 25W','شاحن سريع مناسب للاستعمال اليومي.')">عرض التفاصيل</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-category="audio" data-name="سماعات بلوتوث برو">
+      <span class="tag">الأكثر مبيعًا</span>
+      <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1000&q=80" alt="سماعات بلوتوث برو">
+      <div class="product-body">
+        <h3>سماعات بلوتوث برو</h3>
+        <p class="desc">سماعات لاسلكية بصوت نقي وتصميم مريح ومناسبة للمكالمات والاستماع اليومي.</p>
+        <div class="stars">★★★★★</div>
+        <div class="price">
+          <span class="new-price">12 د.ك</span>
+        </div>
+        <div class="actions">
+          <button class="btn btn-dark" onclick="addToCart('سماعات بلوتوث برو', 12)">أضف إلى السلة</button>
+          <button class="btn btn-green" onclick="orderWhatsApp('سماعات بلوتوث برو', '12 د.ك')">اطلب عبر واتساب</button>
+          <button class="btn btn-outline" onclick="showDetails('سماعات بلوتوث برو','سماعات بصوت واضح وبطارية جيدة وتصميم عصري.')">عرض التفاصيل</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-category="protection" data-name="واقي شاشة زجاجي">
+      <img src="https://images.unsplash.com/photo-1619974121344-3f15e9d91a1b?auto=format&fit=crop&w=1000&q=80" alt="واقي شاشة زجاجي">
+      <div class="product-body">
+        <h3>واقي شاشة زجاجي</h3>
+        <p class="desc">حماية ممتازة ضد الخدوش والكسر مع شفافية عالية ولمس سلس أثناء الاستخدام.</p>
+        <div class="stars">★★★★☆</div>
+        <div class="price">
+          <span class="new-price">3.5 د.ك</span>
+        </div>
+        <div class="actions">
+          <button class="btn btn-dark" onclick="addToCart('واقي شاشة زجاجي', 3.5)">أضف إلى السلة</button>
+          <button class="btn btn-green" onclick="orderWhatsApp('واقي شاشة زجاجي', '3.5 د.ك')">اطلب عبر واتساب</button>
+          <button class="btn btn-outline" onclick="showDetails('واقي شاشة زجاجي','زجاج حماية شفاف وسهل التركيب.')">عرض التفاصيل</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-category="power" data-name="باور بانك 20000">
+      <span class="tag">جديد</span>
+      <img src="https://images.unsplash.com/photo-1587033411391-5d9e51cce126?auto=format&fit=crop&w=1000&q=80" alt="باور بانك 20000">
+      <div class="product-body">
+        <h3>باور بانك 20000</h3>
+        <p class="desc">بطارية متنقلة قوية مناسبة للسفر والتنقل مع شحن ثابت وسعة ممتازة.</p>
+        <div class="stars">★★★★★</div>
+        <div class="price">
+          <span class="old-price">12 د.ك</span>
+          <span class="new-price">10 د.ك</span>
+        </div>
+        <div class="actions">
+          <button class="btn btn-dark" onclick="addToCart('باور بانك 20000', 10)">أضف إلى السلة</button>
+          <button class="btn btn-green" onclick="orderWhatsApp('باور بانك 20000', '10 د.ك')">اطلب عبر واتساب</button>
+          <button class="btn btn-outline" onclick="showDetails('باور بانك 20000','باور بانك قوي مناسب للسفر والعمل.')">عرض التفاصيل</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-category="covers" data-name="كفر شفاف مرن">
+      <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=1000&q=80" alt="كفر شفاف مرن">
+      <div class="product-body">
+        <h3>كفر شفاف مرن</h3>
+        <p class="desc">كفر خفيف وشفاف يحافظ على شكل الهاتف الأصلي مع حماية يومية عملية.</p>
+        <div class="stars">★★★★☆</div>
+        <div class="price">
+          <span class="new-price">4.0 د.ك</span>
+        </div>
+        <div class="actions">
+          <button class="btn btn-dark" onclick="addToCart('كفر شفاف مرن', 4.0)">أضف إلى السلة</button>
+          <button class="btn btn-green" onclick="orderWhatsApp('كفر شفاف مرن', '4.0 د.ك')">اطلب عبر واتساب</button>
+          <button class="btn btn-outline" onclick="showDetails('كفر شفاف مرن','كفر مرن وخفيف يبرز لون الهاتف الأصلي.')">عرض التفاصيل</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="offer">
+    <div class="offer-box">
+      <div>
+        <h3>سلة جاهزة للطلب</h3>
+        <p>أضف المنتجات التي تريدها، ثم افتح السلة وسيتم تجهيز رسالة واتساب تحتوي على كل الأصناف المختارة مع الإجمالي.</p>
+      </div>
+      <div>
+        <button class="btn btn-gold" onclick="openCart()">افتح السلة</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-title" id="features">
+    <h2>مميزات المتجر</h2>
+    <p>تصميم احترافي وتجربة واضحة تساعدك تطلع متجر شكله قوي ويصلح للعرض على العملاء.</p>
+  </div>
+
+  <section class="features">
+    <div class="feature">
+      <h4>بحث سريع</h4>
+      <p>الوصول للمنتج المطلوب بسرعة عبر خانة البحث.</p>
+    </div>
+    <div class="feature">
+      <h4>تصنيفات واضحة</h4>
+      <p>تقسيم المنتجات إلى أقسام يسهل التصفح.</p>
+    </div>
+    <div class="feature">
+      <h4>سلة تفاعلية</h4>
+      <p>جمع المنتجات داخل سلة وعرض الإجمالي.</p>
+    </div>
+    <div class="feature">
+      <h4>طلب واتساب</h4>
+      <p>إرسال الطلب مباشرة برسالة جاهزة إلى رقمك.</p>
+    </div>
+  </section>
+
+  <div class="section-title">
+    <h2>آراء العملاء</h2>
+    <p>إضافة هذا القسم يعطي الموقع شكلًا أقرب للمتاجر الحقيقية.</p>
+  </div>
+
+  <section class="testimonials">
+    <div class="testimonial">
+      <h4>متجر أنيق</h4>
+      <p>الموقع مرتب جدًا وواضح، والطلب عبر واتساب كان سهل.</p>
+      <div class="name">— عميلة من الكويت</div>
+    </div>
+    <div class="testimonial">
+      <h4>منتجات جميلة</h4>
+      <p>التصميم قوي وعرض المنتجات ممتاز جدًا.</p>
+      <div class="name">— عميل جديد</div>
+    </div>
+    <div class="testimonial">
+      <h4>شكل احترافي</h4>
+      <p>المتجر يعطي ثقة خصوصًا مع السلة والبحث والتصنيفات.</p>
+      <div class="name">— زائر للموقع</div>
+    </div>
+    <div class="testimonial">
+      <h4>طلب سريع</h4>
+      <p>أفضل شيء أنه يجمع المنتجات في رسالة واتساب واحدة.</p>
+      <div class="name">— عميل متكرر</div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-box2">
+      <h3>جاهز تطلق متجرك؟</h3>
+      <p>
+        غير اسم المتجر ورقم الواتساب والأسعار والصور، وبعدها راح يكون عندك متجر عرض احترافي جاهز للمشاركة على قوقل كروم أو رفعه على الإنترنت.
+      </p>
+      <div class="contact-actions">
+        <button class="btn btn-green" onclick="contactWhatsApp()">تواصل واتساب</button>
+        <button class="btn btn-gold" onclick="scrollTopPage()">العودة للأعلى</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    جميع الحقوق محفوظة © 2026 - Nova Accessories
+  </footer>
+
+  <div class="drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <div class="drawer-title">سلة المشتريات</div>
+      <button class="close-btn" onclick="closeCart()">إغلاق</button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+  </div>
+
+  <div class="drawer-footer" id="drawerFooter">
+    <div class="total">الإجمالي: <span id="cartTotal">0.0</span> د.ك</div>
+    <button class="btn btn-green" style="width:100%;" onclick="sendCartToWhatsApp()">إرسال الطلب عبر واتساب</button>
+  </div>
+
+  <script>
+    const phoneNumber = "96555209079"; // غير رقمك هنا
+    let cart = [];
+
+    function goToProducts(){
+      document.getElementById("products").scrollIntoView({behavior:"smooth"});
+    }
+
+    function scrollTopPage(){
+      window.scrollTo({top:0, behavior:"smooth"});
+    }
+
+    function contactWhatsApp(){
+      const message = "السلام عليكم، أرغب في الاستفسار عن منتجات متجر Nova Accessories.";
+      const url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+      window.open(url, "_blank");
+    }
+
+    function orderWhatsApp(product, price){
+      const message =
+        "السلام عليكم، أرغب في طلب هذا المنتج:%0A" +
+        "اسم المنتج: " + product + "%0A" +
+        "السعر: " + price + "%0A" +
+        "الرجاء تزويدي بالتفاصيل.";
+      const url = "https://wa.me/" + phoneNumber + "?text=" + message;
+      window.open(url, "_blank");
+    }
+
+    function showDetails(name, description){
+      alert(name + "\\n\\n" + description);
+    }
+
+    function addToCart(name, price){
+      cart.push({name, price});
+      updateCart();
+      alert("تمت إضافة " + name + " إلى السلة");
+    }
+
+    function removeFromCart(index){
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    function updateCart(){
+      document.getElementById("cartCount").innerText = cart.length;
+      const itemsContainer = document.getElementById("cartItems");
+      const totalElement = document.getElementById("cartTotal");
+      itemsContainer.innerHTML = "";
+
+      if(cart.length === 0){
+        itemsContainer.innerHTML = '<div class="empty">السلة فارغة حاليًا.<br>أضف بعض المنتجات أولًا.</div>';
+        totalElement.innerText = "0.0";
+        return;
+      }
+
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price;
+        itemsContainer.innerHTML += `
+          <div class="cart-item">
+            <h4>${item.name}</h4>
+            <p>السعر: ${item.price.toFixed(1)} د.ك</p>
+            <button onclick="removeFromCart(${index})">حذف من السلة</button>
+          </div>
+        `;
+      });
+
+      totalElement.innerText = total.toFixed(1);
+    }
+
+    function openCart(){
+      document.getElementById("cartDrawer").classList.add("open");
+      document.getElementById("drawerFooter").classList.add("open");
+    }
+
+    function closeCart(){
+      document.getElementById("cartDrawer").classList.remove("open");
+      document.getElementById("drawerFooter").classList.remove("open");
+    }
+
+    function sendCartToWhatsApp(){
+      if(cart.length === 0){
+        alert("السلة فارغة");
+        return;
+      }
+
+      let total = 0;
+      let message = "السلام عليكم، أرغب في طلب المنتجات التالية:%0A%0A";
+
+      cart.forEach((item, i) => {
+        total += item.price;
+        message += (i + 1) + "- " + item.name + " | " + item.price.toFixed(1) + " د.ك%0A";
+      });
+
+      message += "%0Aالإجمالي: " + total.toFixed(1) + " د.ك";
+
+      const url = "https://wa.me/" + phoneNumber + "?text=" + message;
+      window.open(url, "_blank");
+    }
+
+    function applyFilters(){
+      const search = document.getElementById("searchInput").value.toLowerCase().trim();
+      const category = document.getElementById("categoryFilter").value;
+      const products = document.querySelectorAll(".product");
+
+      products.forEach(product => {
+        const name = product.dataset.name.toLowerCase();
+        const productCategory = product.dataset.category;
+        const matchesSearch = name.includes(search);
+        const matchesCategory = category === "all" || productCategory === category;
+
+        product.style.display = (matchesSearch && matchesCategory) ? "block" : "none";
+      });
+    }
+
+    function setCategory(category, element){
+      document.getElementById("categoryFilter").value = category;
+      document.querySelectorAll(".cat").forEach(cat => cat.classList.remove("active"));
+      element.classList.add("active");
+      applyFilters();
+      goToProducts();
+    }
+
+    updateCart();
+  </script>
+</body>
+</html>
